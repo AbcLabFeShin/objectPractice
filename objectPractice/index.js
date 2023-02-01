@@ -20,13 +20,15 @@ const obj = {
 
 function findNumberInObj(obj){
     const objValuesArr = Object.keys(obj);//키값 배열
-    const solArr = [];
+    const solArr = {};//const solArr = [];
     for(i=0;i<objValuesArr.length;i++){
         if( typeof(obj[ objValuesArr[i] ]) === 'number'){
             //console.log(i)
-            solArr.push([objValuesArr[i],obj[objValuesArr[i]]]);
-        }
+            //solArr.push([objValuesArr[i],obj[objValuesArr[i]]]);
+            solArr[objValuesArr[i]] = obj[objValuesArr[i]];
+        } //acc[key] = value;
     }
     return solArr;
 }
 console.log(findNumberInObj(obj));
+//array가 아니라 객체 생성
